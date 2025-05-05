@@ -1,0 +1,8 @@
+venv
+__pycache__
+.env
+.rsync-filter
+.deploy_config.sh
+# deploy_sync.sh
+# deploynohup.sh
+# deployservice.sh
