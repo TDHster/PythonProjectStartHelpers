@@ -139,7 +139,11 @@ logger = logging.getLogger(current_dir_name)
 ```
 
 Format includes timestamp, log level, and logger name.
-use `import logger from logger` and example: `logger.info('Info string')` in your files
+Use: 
+```python
+import logger from logger
+logger.info('Info string')
+```
 ---
 
 ## 🔐 Security Notes
