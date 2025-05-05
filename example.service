@@ -1,0 +1,14 @@
+# move to /etc/systemd/system/projectname.service 
+[Unit]
+Description=Service name of your project
+After=network.target
+
+[Service]
+User=username
+WorkingDirectory=/home/username/projectname/
+ExecStart=/home/username/projectname/venv/bin/python /home/username/projectname/main.py
+Restart=always  
+Environment="PYTHONUNBUFFERED=1"  # For correct log output
+
+[Install]
+WantedBy=multi-user.target
