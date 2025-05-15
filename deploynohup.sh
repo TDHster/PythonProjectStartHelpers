@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./deploy_sync.sh
+source ./.deploy_sync.sh
 
 echo "Killing old process..."
 ssh "$REMOTE_USER@$REMOTE_HOST" -p "$REMOTE_PORT" "pkill -f $SCRIPT_NAME || true"
