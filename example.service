@@ -8,7 +8,8 @@ User=username
 WorkingDirectory=/home/username/projectname/
 ExecStart=/home/username/projectname/venv/bin/python /home/username/projectname/main.py
 Restart=always  
-Environment="PYTHONUNBUFFERED=1"  # For correct log output
+# For correct log output
+Environment="PYTHONUNBUFFERED=1"  
 
 [Install]
 WantedBy=multi-user.target
