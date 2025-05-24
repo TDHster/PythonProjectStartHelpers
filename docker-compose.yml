@@ -1,0 +1,19 @@
+services:
+  reminder-bot:
+    container_name: Container-name  # явное имя контейнера
+    build: .
+    # mem_limit: 256m      # max 256MB
+    # cpus: 0.5            # max 50% one CPU
+
+    # env_file
+    # - .env  # load as system env docker-compose.yml
+    volumes:
+      - ./.env:/app/.env  # because python-dotenv
+
+    restart: unless-stopped
+
+    logging:  # limiting logs
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
