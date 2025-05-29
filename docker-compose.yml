@@ -1,6 +1,6 @@
 services:
   reminder-bot:
-    container_name: Container-name  # явное имя контейнера
+    container_name: CHANGE_TO_YOUR_Container-name  
     build: .
     # mem_limit: 256m      # max 256MB
     # cpus: 0.5            # max 50% one CPU
@@ -9,7 +9,12 @@ services:
     # - .env  # load as system env docker-compose.yml
     volumes:
       - ./.env:/app/.env  # because python-dotenv
-
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'python CHANGE-TO-SCRIPTNAME.py' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     restart: unless-stopped
 
     logging:  # limiting logs
