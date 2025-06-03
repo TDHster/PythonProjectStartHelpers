@@ -1,6 +1,6 @@
 services:
   reminder-bot:
-    container_name: CHANGE_TO_YOUR_Container-name  
+    container_name: CHANGE_TO_YOUR_Container_name  
     build: .
     # mem_limit: 256m      # max 256MB
     # cpus: 0.5            # max 50% one CPU
