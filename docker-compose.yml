@@ -1,5 +1,5 @@
 services:
-  lowercase-CHANGE_TO_YOUR_Container_name:
+  image:
     container_name: CHANGE_TO_YOUR_Container_name  
     build: .
     # mem_limit: 256m      # max 256MB
