@@ -1,5 +1,9 @@
 FROM python:3.11-slim
 
+# for healthcheck via pgrep need procps
+RUN apt-get update && apt-get install -y --no-install-recommends procps \
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # For effective caching dependencies
@@ -8,9 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # (except.dockerignore)
 COPY . .
-
-RUN pip install --no-cache-dir -r requirements.txt
-# for healthcheck via pgrep need procps
-RUN apt update && apt install -y procps
 
 CMD ["python", "main.py"]
