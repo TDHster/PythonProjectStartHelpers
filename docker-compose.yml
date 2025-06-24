@@ -1,4 +1,5 @@
 services:
+# next line word "image" define image name
   image:
     container_name: CHANGE_TO_YOUR_Container_name  
     build: .
