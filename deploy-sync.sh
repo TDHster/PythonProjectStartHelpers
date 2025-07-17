@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 source ./.deploy_config.sh
 
 echo "Syncing project to $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH..."
