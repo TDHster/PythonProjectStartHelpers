@@ -1,4 +1,4 @@
 #!/bin/sh/
 # Display all python files content with path
 
-find . -name '*.py' -type f -exec sh -c 'for f do echo "===== ${f#./} ====="; cat "$f"; done' sh {} +
+find . -type f -name "*.py" -not -path "./venv/*" -exec sh -c 'echo "===== $1 ====="; cat "$1"' _ {} \;
